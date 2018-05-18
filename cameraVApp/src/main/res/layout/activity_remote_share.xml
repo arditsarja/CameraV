@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_weight="1.5"
+        android:autoLink="web"
+        android:gravity="center"
+        android:text="This service enables access to your secure CameraV gallery through a web browser on another computer or mobile device on the same local network or through the Tor network."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/cbOnionShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+                android:gravity="center"
+    	android:layout_marginLeft="30dp"
+    	android:layout_marginRight="30dp"    	            
+        android:text="Enable Access via Tor (OnionShare)" />  
+    <Button
+        android:id="@+id/buttonService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="30dp"
+         />
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/share_web_address"
+        android:enabled="false"
+         />
+
+</LinearLayout>

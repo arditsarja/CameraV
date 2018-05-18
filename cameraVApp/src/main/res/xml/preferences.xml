@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--          <ListPreference -->
+<!--             android:title="@string/prefs_lock_screen" -->
+<!--             android:defaultValue="1" -->
+<!--             android:key="lockScreenMode" -->
+<!--             android:entries="@array/lockScreenOptions_" -->
+<!--             android:entryValues="@array/lockScreenOptions" /> -->
+    
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/languages_"
+            android:entryValues="@array/languages"
+            android:key="iw_language"
+            android:title="@string/prefs_language_title" />
+        
+        <!-- 
+        <ListPreference
+            android:title="@string/original_images_should_be"
+            android:defaultValue="0"
+            android:key="assetEncryption"
+            android:entries="@array/originalImageOptions_"
+            android:entryValues="@array/originalImageOptions" />
+ -->
+ 
+        <ListPreference
+            android:title="@string/prefs_panic"
+            android:defaultValue="0"
+            android:key="panicAction"
+            android:entries="@array/panicActionOptions_"
+            android:entryValues="@array/panicActionOptions" />
+        
+        <CheckBoxPreference
+            android:title="@string/prefs_gps_highres"
+            android:summary="@string/prefs_gps_highres_summary"
+            android:defaultValue="false"
+            android:key="prefGpsEnableHires"
+        	/>
+        
+        
+         <CheckBoxPreference
+            android:title="@string/prefs_external_camera"
+            android:summary="@string/prefs_external_camera_summary"
+            android:defaultValue="true"
+            android:key="prefExternalCamera"
+        	/>
+         
+          <CheckBoxPreference
+            android:title="@string/prefs_export_local"
+            android:summary="@string/prefs_export_local_summary"
+            android:defaultValue="true"
+            android:key="prefExportLocal"
+        	/>
+          
+          <CheckBoxPreference
+            android:title="@string/prefs_run_foreground"
+            android:summary="@string/prefs_run_foreground_summary"
+            android:defaultValue="false"
+            android:key="prefRunForeground"
+        	/>
+          
+          <CheckBoxPreference
+            android:title="@string/prefs_stealth_icon"
+            android:summary="@string/prefs_stealth_icon_summary"
+            android:defaultValue="false"
+            android:key="prefStealthIcon"
+        	/>
+          
+          <CheckBoxPreference
+            android:title="@string/prefs_block_screenshots"
+            android:summary="@string/prefs_block_screenshots_summary"
+            android:defaultValue="false"
+            android:key="prefBlockScreenshots"
+        	/>
+          
+        	 
+</PreferenceScreen>

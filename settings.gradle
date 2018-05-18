@@ -1,0 +1,3 @@
+include ':informaCam', ':libonionshare'
+include ':cameraVApp'
+include ':camCipher'
