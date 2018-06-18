@@ -1,6 +1,5 @@
 package org.witness.informacam.app;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -9,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -27,6 +25,7 @@ import org.witness.informacam.app.utils.Constants.App.Login;
 import org.witness.informacam.app.utils.Constants.App.Wizard;
 import org.witness.informacam.app.utils.Constants.Codes;
 import org.witness.informacam.app.utils.Constants.Preferences;
+import org.witness.informacam.app.utils.Premission;
 import org.witness.informacam.crypto.KeyUtility;
 import org.witness.informacam.models.utils.ILanguageMap;
 import org.witness.informacam.ui.CameraActivity;
@@ -55,7 +54,8 @@ public class InformaActivity extends Activity implements InformaCamStatusListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getPremission();
+        new Premission().getReadExternalStoragePremission(this);
+        new Premission().getWriteExternalStoragePremission(this);
         prefStealthIcon = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("prefStealthIcon", false);
         setIcon(prefStealthIcon);
 
@@ -72,100 +72,6 @@ public class InformaActivity extends Activity implements InformaCamStatusListene
         }
     }
 
-    private void getPremission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.CAMERA)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.INTERNET)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.INTERNET},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.BLUETOOTH)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.BLUETOOTH},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.BLUETOOTH_ADMIN)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_ADMIN},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.CAMERA)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.WAKE_LOCK)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.WAKE_LOCK},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.ACCESS_WIFI_STATE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_WIFI_STATE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.CHANGE_WIFI_STATE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CHANGE_WIFI_STATE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_NETWORK_STATE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.VIBRATE)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.VIBRATE},
-                        1000);
-            }
-            if (checkSelfPermission(Manifest.permission.KILL_BACKGROUND_PROCESSES)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.KILL_BACKGROUND_PROCESSES},
-                        1000);
-            }
-        }
-    }
 
     @Override
     public void onResume() {

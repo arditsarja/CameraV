@@ -36,6 +36,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import info.guardianproject.odkparser.utils.Premission;
+
 public class CameraActivity extends Activity implements InformaCamStatusListener, InformaCamEventListener {
 	private final static String LOG = String.format("********* CameraActivity : %s", App.Camera.LOG);
 
@@ -55,7 +57,7 @@ public class CameraActivity extends Activity implements InformaCamStatusListener
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		new Premission().getCameraPremission(this);
 		setContentView(R.layout.activity_camera_waiter);
 		
 		informaCam = (InformaCam)getApplication();		

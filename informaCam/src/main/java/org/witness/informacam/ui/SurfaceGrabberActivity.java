@@ -54,13 +54,6 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.CAMERA)
-                    != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA},
-                        1000);
-            }
-        }
         button = (Button) findViewById(R.id.surface_grabber_button);
         button.setOnClickListener(this);
         progress = (TextView) findViewById(R.id.surface_grabber_progress);

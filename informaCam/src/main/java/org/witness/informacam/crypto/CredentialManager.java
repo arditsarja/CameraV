@@ -177,7 +177,7 @@ public class CredentialManager implements ICacheWordSubscriber {
 			{
 				
 				/*
-				 * ICredentials credentials = new ICredentials();
+				  ICredentials credentials = new ICredentials();
 				credentials.inflate(informaCam.ioService.getBytes(Models.IUser.CREDENTIALS, Type.INTERNAL_STORAGE));
 				
 				SecretKey key = ((PassphraseSecrets) cacheWord.getCachedSecrets()).getSecretKey();
