@@ -1,14 +1,11 @@
 package org.witness.informacam.ui;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.Size;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Surface;
@@ -55,7 +52,7 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Premission.getPremission(this);
+        Premission.getCameraPremission(this);
         setContentView(getLayout());
         button = (Button) findViewById(R.id.surface_grabber_button);
         button.setOnClickListener(this);
@@ -69,7 +66,6 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
         holder.addCallback(this);
         holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
-
 
 
     protected int getLayout() {
@@ -93,7 +89,7 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void onResume() {
         super.onResume();
-
+        Premission.getCameraPremission(this);
         if (!tryCreateCamera(getCameraDirection())) {
             if (!canUseOtherDirection() || !tryCreateCamera(getOtherDirection(getCameraDirection()))) {
                 finish();
@@ -164,7 +160,6 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         try {
-            Premission.getPremission(this);
             camera.setPreviewDisplay(holder);
             Size size = choosePictureSize(camera.getParameters().getSupportedPictureSizes());
 

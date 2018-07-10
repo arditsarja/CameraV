@@ -13,6 +13,7 @@
 
 package info.guardianproject.iocipher.camera;
 
+
 import info.guardianproject.iocipher.File;
 import info.guardianproject.iocipher.camera.encoders.AACHelper;
 
@@ -141,7 +142,7 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
 	
 	 private void initAudio(final String audioPath) throws Exception {
 
-			fileAudio  = new File(audioPath); 
+			fileAudio  = new File(audioPath);
 			
 			   outputStreamAudio = new BufferedOutputStream(new info.guardianproject.iocipher.FileOutputStream(fileAudio),8192*8);
 				

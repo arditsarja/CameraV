@@ -55,7 +55,6 @@ public class InformaActivity extends Activity implements InformaCamStatusListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Premission.getPremission(this);
         prefStealthIcon = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("prefStealthIcon", false);
         setIcon(prefStealthIcon);
 

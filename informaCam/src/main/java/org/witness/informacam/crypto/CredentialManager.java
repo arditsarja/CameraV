@@ -4,6 +4,7 @@ import info.guardianproject.cacheword.CacheWordHandler;
 import info.guardianproject.cacheword.ICacheWordSubscriber;
 import info.guardianproject.cacheword.PassphraseSecrets;
 import info.guardianproject.cacheword.Wiper;
+import info.guardianproject.iocipher.camera.viewer.Premission;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -19,6 +20,7 @@ import org.witness.informacam.utils.Constants.Codes;
 import org.witness.informacam.utils.Constants.IManifest;
 import org.witness.informacam.utils.Constants.Logger;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -44,7 +46,7 @@ public class CredentialManager implements ICacheWordSubscriber {
 		this.initIOCipher = initIOCipher;
 		this.context = context;
 		this.firstUse = firstUse;
-		
+
 		cacheWord = new CacheWordHandler(this.context, this);
 		
 		if (showNotification)
