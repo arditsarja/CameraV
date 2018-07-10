@@ -25,7 +25,6 @@ import org.witness.informacam.app.utils.Constants.App.Login;
 import org.witness.informacam.app.utils.Constants.App.Wizard;
 import org.witness.informacam.app.utils.Constants.Codes;
 import org.witness.informacam.app.utils.Constants.Preferences;
-import org.witness.informacam.app.utils.Premission;
 import org.witness.informacam.crypto.KeyUtility;
 import org.witness.informacam.models.utils.ILanguageMap;
 import org.witness.informacam.ui.CameraActivity;
@@ -35,6 +34,8 @@ import org.witness.informacam.utils.InformaCamBroadcaster.InformaCamStatusListen
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import info.guardianproject.iocipher.camera.viewer.Premission;
 
 
 public class InformaActivity extends Activity implements InformaCamStatusListener {
@@ -54,8 +55,7 @@ public class InformaActivity extends Activity implements InformaCamStatusListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new Premission().getReadExternalStoragePremission(this);
-        new Premission().getWriteExternalStoragePremission(this);
+        Premission.getPremission(this);
         prefStealthIcon = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("prefStealthIcon", false);
         setIcon(prefStealthIcon);
 

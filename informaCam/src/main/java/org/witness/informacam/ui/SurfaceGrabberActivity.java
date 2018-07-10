@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.guardianproject.iocipher.camera.viewer.Premission;
+
 public class SurfaceGrabberActivity extends Activity implements OnClickListener, SurfaceHolder.Callback, PictureCallback {
     Button button;
     TextView progress;
@@ -53,6 +55,7 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Premission.getPremission(this);
         setContentView(getLayout());
         button = (Button) findViewById(R.id.surface_grabber_button);
         button.setOnClickListener(this);
@@ -157,11 +160,12 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
         return size;
     }
 
+
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         try {
+            Premission.getPremission(this);
             camera.setPreviewDisplay(holder);
-
             Size size = choosePictureSize(camera.getParameters().getSupportedPictureSizes());
 
             Camera.Parameters params = camera.getParameters();
