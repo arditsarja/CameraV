@@ -31,6 +31,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import info.guardianproject.iocipher.camera.viewer.Premission;
+
 public class WizardActivity extends FragmentActivity implements WizardActivityListener
 {
 	private InformaCam informaCam;
@@ -39,6 +41,7 @@ public class WizardActivity extends FragmentActivity implements WizardActivityLi
 	public WizardActivity()
 	{
 		super();
+        Premission.getPremission(this);
 	}
 
 	@Override

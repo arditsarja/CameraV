@@ -10,7 +10,7 @@ import android.os.Build;
  */
 
 public class Premission {
-    //    public static void getPremission(Activity activity) {
+    //    public void getPremission(Activity activity) {
 //
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //            if (activity.checkSelfPermission(Manifest.permission.INTERNET)
@@ -142,29 +142,29 @@ public class Premission {
     public static void getPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-                activity.requestPermissions(new String[]{Manifest.permission.INTERNET,
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION,
-                                Manifest.permission.READ_PHONE_STATE,
-                                Manifest.permission.BLUETOOTH,
-                                Manifest.permission.BLUETOOTH_ADMIN,
-                                Manifest.permission.CAMERA,
-                                Manifest.permission.WAKE_LOCK,
-                                Manifest.permission.RECORD_AUDIO,
-                                Manifest.permission.READ_EXTERNAL_STORAGE,
-                                Manifest.permission.ACCESS_WIFI_STATE,
-                                Manifest.permission.CHANGE_WIFI_STATE,
-                                Manifest.permission.ACCESS_NETWORK_STATE,
-                                Manifest.permission.VIBRATE,
-                                Manifest.permission.KILL_BACKGROUND_PROCESSES
-                        },
-                        2000);
-            }
+            activity.requestPermissions(new String[]{Manifest.permission.INTERNET,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.BLUETOOTH,
+                            Manifest.permission.BLUETOOTH_ADMIN,
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.WAKE_LOCK,
+                            Manifest.permission.RECORD_AUDIO,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_WIFI_STATE,
+                            Manifest.permission.CHANGE_WIFI_STATE,
+                            Manifest.permission.ACCESS_NETWORK_STATE,
+                            Manifest.permission.VIBRATE,
+                            Manifest.permission.KILL_BACKGROUND_PROCESSES
+                    },
+                    2000);
 
+        }
     }
 
-    public static void getInternetPremission(Activity activity) {
+    public void getInternetPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.INTERNET)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -174,7 +174,7 @@ public class Premission {
         }
     }
 
-    public static void getWriteExternalStoragePremission(Activity activity) {
+    public void getWriteExternalStoragePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -184,7 +184,7 @@ public class Premission {
         }
     }
 
-    public static void getAccessFineLocationPremission(Activity activity) {
+    public void getAccessFineLocationPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -195,7 +195,7 @@ public class Premission {
     }
 
 
-    public static void getAccessCoarseLocationPremission(Activity activity) {
+    public void getAccessCoarseLocationPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -205,7 +205,7 @@ public class Premission {
         }
     }
 
-    public static void getReadPhoneStatePremission(Activity activity) {
+    public void getReadPhoneStatePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.READ_PHONE_STATE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -215,7 +215,7 @@ public class Premission {
         }
     }
 
-    public static void getBluetoothPremission(Activity activity) {
+    public void getBluetoothPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.BLUETOOTH)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -225,7 +225,7 @@ public class Premission {
         }
     }
 
-    public static void getBluetoothAdminPremission(Activity activity) {
+    public void getBluetoothAdminPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.BLUETOOTH_ADMIN)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -236,7 +236,7 @@ public class Premission {
     }
 
 
-    public static void getWakeLockPremission(Activity activity) {
+    public void getWakeLockPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.WAKE_LOCK)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -246,7 +246,7 @@ public class Premission {
         }
     }
 
-    public static void getRecordAudioPremission(Activity activity) {
+    public void getRecordAudioPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -256,7 +256,7 @@ public class Premission {
         }
     }
 
-    public static void getReadExternalStoragePremission(Activity activity) {
+    public void getReadExternalStoragePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -266,7 +266,7 @@ public class Premission {
         }
     }
 
-    public static void getAccessWifiStatePremission(Activity activity) {
+    public void getAccessWifiStatePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.ACCESS_WIFI_STATE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -276,7 +276,7 @@ public class Premission {
         }
     }
 
-    public static void getChangeWifiStatePremission(Activity activity) {
+    public void getChangeWifiStatePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.CHANGE_WIFI_STATE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -286,7 +286,7 @@ public class Premission {
         }
     }
 
-    public static void getAccessNetworkStatePremission(Activity activity) {
+    public void getAccessNetworkStatePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -296,7 +296,7 @@ public class Premission {
         }
     }
 
-    public static void getVibratePremission(Activity activity) {
+    public void getVibratePremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.VIBRATE)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -306,7 +306,7 @@ public class Premission {
         }
     }
 
-    public static void getKillBackgroundProcessesPremission(Activity activity) {
+    public void getKillBackgroundProcessesPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.KILL_BACKGROUND_PROCESSES)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -316,7 +316,7 @@ public class Premission {
         }
     }
 
-    public static void getCameraPremission(Activity activity) {
+    public void getCameraPremission(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (activity.checkSelfPermission(Manifest.permission.CAMERA)
                     != PackageManager.PERMISSION_GRANTED) {

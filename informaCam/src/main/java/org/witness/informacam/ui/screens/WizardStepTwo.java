@@ -41,7 +41,7 @@ public class WizardStepTwo extends Fragment implements OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater li, ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(li, container, savedInstanceState);
-		Premission.getCameraPremission(a);
+
 		rootView = li.inflate(R.layout.fragment_wizard_step_two, null);
 		toImageCapture = (ImageButton) rootView.findViewById(R.id.to_image_capture);
 		toImageCapture.setOnClickListener(this);

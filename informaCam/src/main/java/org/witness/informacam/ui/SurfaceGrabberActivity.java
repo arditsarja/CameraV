@@ -52,7 +52,7 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Premission.getCameraPremission(this);
+
         setContentView(getLayout());
         button = (Button) findViewById(R.id.surface_grabber_button);
         button.setOnClickListener(this);
@@ -89,7 +89,7 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void onResume() {
         super.onResume();
-        Premission.getCameraPremission(this);
+
         if (!tryCreateCamera(getCameraDirection())) {
             if (!canUseOtherDirection() || !tryCreateCamera(getOtherDirection(getCameraDirection()))) {
                 finish();
@@ -160,6 +160,9 @@ public class SurfaceGrabberActivity extends Activity implements OnClickListener,
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         try {
+
+            camera.release();
+
             camera.setPreviewDisplay(holder);
             Size size = choosePictureSize(camera.getParameters().getSupportedPictureSizes());
 

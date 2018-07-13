@@ -57,7 +57,7 @@ public class CameraActivity extends Activity implements InformaCamStatusListener
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		new Premission().getCameraPremission(this);
+
 		setContentView(R.layout.activity_camera_waiter);
 		
 		informaCam = (InformaCam)getApplication();		

@@ -4,8 +4,10 @@ import org.witness.informacam.app.R;
 import org.witness.informacam.app.utils.UIHelpers;
 import org.witness.informacam.app.utils.Constants.WizardActivityListener;
 
+import android.Manifest;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,6 +31,25 @@ public class WizardCreateDB extends Fragment implements OnClickListener
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		String s ="";
+        ActivityCompat.requestPermissions( a, new String[]{Manifest.permission.INTERNET,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.BLUETOOTH,
+                        Manifest.permission.BLUETOOTH_ADMIN,
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.WAKE_LOCK,
+                        Manifest.permission.RECORD_AUDIO,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.ACCESS_WIFI_STATE,
+                        Manifest.permission.CHANGE_WIFI_STATE,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.VIBRATE,
+                        Manifest.permission.KILL_BACKGROUND_PROCESSES
+                },
+                2000);
 	}
 
 	@Override

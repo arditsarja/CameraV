@@ -61,7 +61,7 @@ public class Model extends JSONObject {
 						
 						List<String> fieldSet = new ArrayList<String>();
 						for(Field subField : subClz.getDeclaredFields()) {
-							if(subField.getModifiers() == Field.DECLARED) {
+							if(subField.getModifiers() == Field.DECLARED)      {
 								fieldSet.add(subField.getName());
 							}
 						}
@@ -128,11 +128,14 @@ public class Model extends JSONObject {
 				if(values.has(f.getName())) {
 					boolean isModel = false;
 
-		//			Log.d(Informa.LOG,"inflating field: " + f.getName() + " " + f.getType().getName());
+					Log.d(Informa.LOG,"inflating field: " + f.getName() + " " + f.getType().getName());
 					
 					if(f.getType().getSuperclass() == Model.class) {
 						isModel = true;
-					}					
+					}
+					if(f.getName().equals("fields")) {
+						isModel = true;
+					}
 
 					if(f.getType() == List.class) {
 						List subValue = new ArrayList();
@@ -179,8 +182,11 @@ public class Model extends JSONObject {
 						((Model) val).inflate(values.getJSONObject(f.getName()));
 						f.set(this, val);
 					} else {
-						
-						f.set(this, values.get(f.getName()));
+						try {
+							f.set(this, values.get(f.getName()));
+						} catch (Exception e) {
+							Log.e("Exeption",e.getMessage());
+						}
 					}
 				}
 		
